@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Problem Details error handling  middleware for express",
   "main": "./dist/cjs/index.js",
-  "types": "./dist/cjs/index",
+  "types": "./dist/cjs/index.d.ts",
   "module": "./dist/esm/index.js",
   "files": [
-    "dist/"
+    "src",
+    "dist"
   ],
   "scripts": {
     "test": "test",
