@@ -6,7 +6,7 @@ export function problemDetailsMiddleware(factory) {
         if (res.headersSent) {
             return next(error);
         }
-        let problem = new ProblemDetails();
+        var problem = new ProblemDetails();
         try {
             problem = factory.create(req, error);
         }

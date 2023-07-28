@@ -7,8 +7,8 @@ import { ProblemDetailsError } from './problem-details.types';
  * @returns
  */
 export function isProblemDetailsError(o) {
-    const proto = Object.getPrototypeOf;
-    const isProblemDetailsError = proto(o).constructor === ProblemDetailsError;
-    const extendsProblemDetailsError = proto(proto(o)).constructor === ProblemDetailsError;
+    var proto = Object.getPrototypeOf;
+    var isProblemDetailsError = proto(o).constructor === ProblemDetailsError;
+    var extendsProblemDetailsError = proto(proto(o)).constructor === ProblemDetailsError;
     return isProblemDetailsError || extendsProblemDetailsError;
 }
