@@ -1,1 +1,1 @@
-import { } from 'me'
+import { ProblemDetails } from 'medara-express-problem-details'
