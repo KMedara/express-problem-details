@@ -2,10 +2,10 @@
   "name": "@medara/express-problem-details",
   "version": "1.0.0",
   "description": "Problem Details by convention",
-  "main": "dist/index.js",
+  "main": "index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/"
+    "index.js"
   ],
   "dependencies": {
     "accepts": "^1.3.8",
