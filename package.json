@@ -2,7 +2,8 @@
   "name": "@medara/express-problem-details",
   "version": "1.0.0",
   "description": "Problem Details by convention",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/"
   ],
