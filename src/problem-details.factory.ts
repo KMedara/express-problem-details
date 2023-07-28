@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import { HttpStatus } from './HttpStatus';
-import { ProblemDetailsOptions } from './problem-details-options';
-import { ProblemDetailsOptionsSetup } from './problem-details-options-setup';
+import { ProblemDetailsOptions, ProblemDetailsOptionsSetup } from './problem-details.options';
 import { IProblemDetails, IProblemDetailsFactory, ProblemDetailsFactoryConfigurationFn } from './problem-details.types';
 import { Request } from 'express';
 

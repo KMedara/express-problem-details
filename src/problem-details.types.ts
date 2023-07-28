@@ -1,5 +1,5 @@
 import { Url } from 'url';
-import { ProblemDetailsOptions } from './problem-details-options';
+import { ProblemDetailsOptions } from './problem-details.options';
 import { HttpStatus } from './HttpStatus';
 import { Request } from 'express';
 

@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProblemDetailsFactory = exports.ProblemDetailsFactoryConfiguration = void 0;
 const HttpStatus_1 = require("./HttpStatus");
-const problem_details_options_setup_1 = require("./problem-details-options-setup");
+const problem_details_options_1 = require("./problem-details.options");
 /**
  *
  */
 class ProblemDetailsFactoryConfiguration {
     constructor(config) {
-        this.options = Object.assign(Object.assign({}, (0, problem_details_options_setup_1.ProblemDetailsOptionsSetup)()), config());
+        this.options = Object.assign(Object.assign({}, (0, problem_details_options_1.ProblemDetailsOptionsSetup)()), config());
     }
 }
 exports.ProblemDetailsFactoryConfiguration = ProblemDetailsFactoryConfiguration;
