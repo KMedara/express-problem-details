@@ -6,3 +6,5 @@ export * from './src/problem-details.factory'
 export * from './src/problem-details.middleware'
 export * from './src/problem-details'
 export * from './src/problem-details.types'
+
+export const d = 123;
