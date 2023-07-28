@@ -2,7 +2,6 @@ Problem Details by convention
 
 <h2>How to use</h2>
 ```
-
 const Map = () => {
 	const options: ProblemDetailsOptions = new ProblemDetailsOptions();
 
@@ -19,5 +18,4 @@ const factory = new ProblemDetailsFactory(factoryConfiguration);
 app.use('/users', userRouter);
 
 app.use(errorHandler(factory));
-
 ```
