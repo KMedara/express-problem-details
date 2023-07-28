@@ -1,23 +1,24 @@
 Problem Details by convention
 
 <h2>How to use</h2>
-<hr/>
-<code>
-	const Map = () => {
-	const options: ProblemDetailsOptions = new ProblemDetailsOptions();
 
-    options.mapToStatusCode(UserNotFoundError, HttpStatus.InternalServerError);
-    //options.map(UserNotFoundError, (err) => ({details: 'hello'}));
+```
+const Map = () => {
+const options: ProblemDetailsOptions = new ProblemDetailsOptions();
 
-    //options.map(UserNotFoundError, (err) =>  ProblemDetails.createFromError(err));
-    //options.mapToProblemDetails(UserNotFoundError, HttpStatus.BadRequest, 'url');
-    return options;
-    };
-    const factoryConfiguration: ProblemDetailsFactoryConfiguration = new ProblemDetailsFactoryConfiguration(Map);
+///options.mapToStatusCode(UserNotFoundError, HttpStatus.InternalServerError);
+///options.map(UserNotFoundError, (err) => ({details: 'hello'}));
 
-    const factory = new ProblemDetailsFactory(factoryConfiguration);
-    app.use('/users', userRouter);
+///options.map(UserNotFoundError, (err) => ProblemDetails.createFromError(err));
+///options.mapToProblemDetails(UserNotFoundError, HttpStatus.BadRequest, 'url');
+return options;
+};
+const factoryConfiguration: ProblemDetailsFactoryConfiguration = new ProblemDetailsFactoryConfiguration(Map);
 
-    app.use(errorHandler(factory));
+const factory = new ProblemDetailsFactory(factoryConfiguration);
+app.use('/users', userRouter);
 
-</code>
+app.use(errorHandler(factory));
+```
+
+fg
