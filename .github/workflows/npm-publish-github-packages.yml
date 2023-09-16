@@ -8,22 +8,15 @@ on:
 permissions: 
       contents: write
       packages: write
-
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
-      # - name: Increment package version
-      #   run: npm version ${{ github.ref }}
-      
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
-         with:
-          node-version: '20'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
