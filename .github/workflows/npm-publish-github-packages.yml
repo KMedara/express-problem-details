@@ -8,6 +8,7 @@ on:
 permissions: 
       contents: write
       packages: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -15,8 +16,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
-      - name: Increment package version
-        run: npm version ${{ github.ref }}
+      # - name: Increment package version
+      #   run: npm version ${{ github.ref }}
       
       - name: Create Release
         id: create_release
