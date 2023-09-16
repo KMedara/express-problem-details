@@ -21,4 +21,5 @@ app.use('/users', userRouter);
 app.use(errorHandler(factory));
 ```
 
-fg
+https://cameronnokes.com/blog/the-30-second-guide-to-publishing-a-typescript-package-to-npm/
+https://docs.github.com/en/packages/quickstart

@@ -4,6 +4,7 @@
   "description": "Problem Details by convention",
   "main": "index.js",
   "types": "dist/index.d.ts",
+
   "files": [
     "index.js"
   ],
@@ -70,9 +71,13 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "tsc"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "publishConfig": {
+    "@KMedara:registry": "https://npm.pkg.github.com"
+  }
 }
