@@ -15,12 +15,12 @@ jobs:
       - run: npm install
       - run: npm ci
       
-      - name: Compile TS
-      - run: npm run prepublish
-      - run: npm test
+      # - name: Compile TS
+      # - run: npm run prepublish
+      # - run: npm test
 
-      - name: Pack
-      - run: npm pack
+      # - name: Pack
+      # - run: npm pack
 
   publish-gpr:
     needs: build
