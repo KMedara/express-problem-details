@@ -12,10 +12,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-
-      - name: Install dependencies 
-        run: npm install     
-        run: npm ci
+      - run: npm install
+      - run: npm ci
       
       - name: Compile TS
         run: npm run prepublish
