@@ -14,8 +14,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - Increment package version
-      - npm version ${{ github.ref }}
+      - name: Increment package version
+        run : npm version ${{ github.ref }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
