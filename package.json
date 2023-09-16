@@ -3,20 +3,23 @@
   "version": "1.0.0",
   "description": "Problem Details by convention",
   "main": "index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "tsc"
+    "build": "npm run build:types",
+    "build:types": "tsc -p tsconfig.types.json",
+    "package" : "npm run build && npm pack"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/kmedara/express-problem-details.git"
   },
   "files": [
-    "index.js"
+    "dist"
   ],
   "dependencies": {
     "accepts": "^1.3.8",
