@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Version
-        run: npm version ${{github.ref}}
+        run: npm version ${{github.ref_name}}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
