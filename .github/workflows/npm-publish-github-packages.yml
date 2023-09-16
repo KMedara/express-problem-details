@@ -14,8 +14,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Version
-        run: npm version ${{github.ref_name}}
+      
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -38,6 +37,8 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@kmedara/express-problem-details'
       # - run: npm run addscope
+      - name: Version
+        run: npm version ${{github.ref_name}}
       - name: Publish to GitHub Packages
         run: npm publish
         env:
