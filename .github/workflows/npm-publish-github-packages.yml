@@ -37,6 +37,7 @@ jobs:
           scope: '@kmedara/express-problem-details'
       # - run: npm run addscope
       - name: Publish to GitHub Packages
+        run: npm version ${{ github.ref }}
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
