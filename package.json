@@ -6,8 +6,7 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:types",
-    "build:types": "tsc -p tsconfig.types.json",
+    "build": "tsc",
     "package" : "npm run build && npm pack"
   },
   "publishConfig": {
