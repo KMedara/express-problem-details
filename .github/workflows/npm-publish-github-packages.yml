@@ -46,8 +46,6 @@ jobs:
           length_from_start: 1
 
       - name: Version
-        env: 
-          VERSION: ${{ github.ref_name }}
         run: |
           git config --global user.email "kmedara2015@outlook.com"
           git config --global user.name "Kevin Medara"
