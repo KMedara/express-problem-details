@@ -42,7 +42,7 @@ jobs:
         run: |
           git config --global user.email "kmedara2015@outlook.com"
           git config --global user.name "Kevin Medara"
-        run: npm version ${{github.ref_name}}
+          npm version ${{github.ref_name}}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to GitHub Packages
