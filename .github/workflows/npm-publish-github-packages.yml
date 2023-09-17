@@ -43,7 +43,7 @@ jobs:
         id: two
         with:
           value: ${{ github.ref_name }}
-          length_from_start: 1
+          index_of_str: "v"
 
       - name: Version
         run: |
