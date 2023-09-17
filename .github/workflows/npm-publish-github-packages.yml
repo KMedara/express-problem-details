@@ -28,6 +28,8 @@ jobs:
 
 
   publish:
+    needs: release
+    if: (needs.release.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,6 +40,12 @@ jobs:
           node-version: '20'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@kmedara/express-problem-details'
+
+      - name: Install Dependencies
+        run: npm Install
+
+      - name: Build
+        run: npm run package
 
       - name: Version
         run: |
