@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Problem Details by convention",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish" : "npm run build"
+    "build": "rm -rf dist && tsc",
+    "package" : "npm run build && npm pack"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
