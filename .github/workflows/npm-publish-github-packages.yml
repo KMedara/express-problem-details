@@ -5,52 +5,12 @@ on:
     tags:
       - 'v*'
 
-permissions: 
-      contents: write
-      packages: write
 jobs:
-
-  publish:    
-    if: endsWith(github.ref, 'master') == false
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: Setup .npmrc file to publish to GitHub Packages
-        uses: actions/setup-node@v1
-        with:
-          node-version: '16'
-          cache: 'npm'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@kmedara/express-problem-details'
-
-      - name: Install Dependencies
-        run: npm install
-
-      # - name: Build
-        # run: npm run package
-
-      - name: Version
-        run: |
-          git config --global user.email "kmedara2015@outlook.com"
-          git config --global user.name "Kevin Medara"
-          npm version ${{github.ref_name}} --git-tag-version false
-
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish to GitHub Packages
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
   release:
-    needs: publish
-    if: needs.publish.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -61,3 +21,32 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # - name: Setup .npmrc file to publish to npm
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: '14.x'
+      #     registry-url: 'https://registry.npmjs.org'
+      - name: Install modules
+        run: npm install
+      - name: Build
+        run: npm run build
+      # - name: Publish to npm
+      #   run: npm publish --access public
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Setup .npmrc file to publish to GitHub Packages
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@kmedara/express-problem-details'
+      - run: npm run addscope
+      - name: Publish to GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
