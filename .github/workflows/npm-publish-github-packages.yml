@@ -43,6 +43,7 @@ jobs:
           git config --global user.email "kmedara2015@outlook.com"
           git config --global user.name "Kevin Medara"
           npm version 2.0.0
+          
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to GitHub Packages
