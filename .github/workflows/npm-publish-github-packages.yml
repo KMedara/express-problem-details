@@ -27,8 +27,6 @@ jobs:
           prerelease: false
 
   publish:
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -40,8 +38,11 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@kmedara/express-problem-details'
       # - run: npm run addscope
-      # - name: Version
-      #   run: npm version ${{github.ref_name}}
+      - name: Version
+        run: npm version ${{github.ref_name}}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to GitHub Packages
         run: npm publish
-        
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
