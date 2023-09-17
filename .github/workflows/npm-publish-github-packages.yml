@@ -1,9 +1,9 @@
 name: Release & Publish
 
-on:
-  push:
-    tags:
-      - 'v*'
+on: push
+  # push:
+  #   tags:
+  #     - 'v*'
 
 permissions: 
       contents: write
@@ -49,7 +49,7 @@ jobs:
         run: |
           git config --global user.email "kmedara2015@outlook.com"
           git config --global user.name "Kevin Medara"
-          npm version ${{ steps.two.outputs.substring }}
+          # npm version ${{ steps.two.outputs.substring }}
 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
