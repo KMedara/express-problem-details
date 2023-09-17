@@ -53,7 +53,7 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@kmedara/express-problem-details'
-      - run: npm run addscope
+      # - run: npm run addscope
       - name: Publish to GitHub Packages
         run: npm publish
         env:
