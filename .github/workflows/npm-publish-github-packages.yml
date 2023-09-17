@@ -26,6 +26,7 @@ jobs:
           draft: false
           prerelease: false
 
+
   publish:
     runs-on: ubuntu-latest
     steps:
@@ -37,19 +38,12 @@ jobs:
           node-version: '20'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@kmedara/express-problem-details'
-      
-      # - name: Obtain Version
-      #   uses: bhowell2/github-substring-action@1.0.2
-      #   id: two
-      #   with:
-      #     value: ${{ github.ref_name }}
-      #     index_of_str: "v"
 
       - name: Version
         run: |
           git config --global user.email "kmedara2015@outlook.com"
           git config --global user.name "Kevin Medara"
-          npm version patch
+          npm version ${{github.ref_name}} --git-tag-version false
 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
