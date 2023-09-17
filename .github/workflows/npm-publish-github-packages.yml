@@ -1,6 +1,9 @@
 name: Release & Publish
 
-on: push
+on:
+  push:
+    tags:
+      - 'v*'
 
 permissions: 
       contents: write
@@ -35,11 +38,11 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@kmedara/express-problem-details'
       # - run: npm run addscope
-      - name: Version
-        run: |
-          git config --global user.email "kmedara2015@outlook.com"
-          git config --global user.name "Kevin Medara"
-          npm version ${{github.ref_name}}
+      # - name: Version
+      #   run: |
+      #     git config --global user.email "kmedara2015@outlook.com"
+      #     git config --global user.name "Kevin Medara"
+      #     # npm version ${{github.ref_name}}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to GitHub Packages
