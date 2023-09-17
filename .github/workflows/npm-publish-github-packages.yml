@@ -26,10 +26,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: tsc compile
-        uses: iCrawl/action-tsc@v1
-        with:
-          project: ''
+      - name: Build
+        run: npm run package
 
       - name: Version
         run: |
