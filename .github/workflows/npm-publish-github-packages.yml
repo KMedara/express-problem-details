@@ -39,7 +39,7 @@ jobs:
           scope: '@kmedara/express-problem-details'
       # - run: npm run addscope
       - name: Version
-       - run: |
+        run: |
           git config --global user.email "kmedara2015@outlook.com"
           git config --global user.name "Kevin Medara"
         run: npm version ${{github.ref_name}}
