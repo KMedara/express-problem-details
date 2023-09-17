@@ -1,6 +1,5 @@
 {
   "name": "@kmedara/express-problem-details",
-  "version": "1.0.0",
   "description": "Problem Details by convention",
   "main": "index.js",
   "types": "dist/types/index.d.ts",
