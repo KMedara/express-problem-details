@@ -25,3 +25,7 @@ https://cameronnokes.com/blog/the-30-second-guide-to-publishing-a-typescript-pac
 https://docs.github.com/en/packages/quickstart
 https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry
 https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+
+<H2>publishing</H2>
+push a new tag to master branch 

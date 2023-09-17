@@ -10,8 +10,8 @@ permissions:
       packages: write
 jobs:
 
-
   publish:    
+    if: endsWith(github.ref, 'master') == false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
