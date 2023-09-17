@@ -36,8 +36,6 @@ jobs:
       #     registry-url: 'https://registry.npmjs.org'
       - name: Install modules
         run: npm install
-      - name: Build
-        run: npm run build
       # - name: Version
       #   run: |
       #     git config --global user.email "kmedara2015@outlook.com"
