@@ -2,8 +2,10 @@
   "name": "@kmedara/express-problem-details",
   "version": "1.0.0",
   "description": "Problem Details by convention",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "umd:main": "dist/umd/index.js",
+  "types": "dist/types/index.d.js",
   "scripts": {
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
